@@ -3661,3 +3661,99 @@ background:
     font-weight: 600 !important;
     white-space: nowrap !important;
 }
+/* =========================================
+   COLOR UNIFICADO (DORADO / CREMA) PARA MAIL E IG
+========================================= */
+footer.tana-footer .correo,
+footer.tana-footer .ig-estudio {
+    color: var(--gold, #d2bd92) !important;
+}
+
+footer.tana-footer .correo:visited,
+footer.tana-footer .ig-estudio:visited {
+    color: var(--gold, #d2bd92) !important;
+}
+
+footer.tana-footer .contacto-icono,
+footer.tana-footer .ig-icono {
+    stroke: var(--gold, #d2bd92) !important;
+}/* =========================================
+   ESTILO COMPACTO UNIFICADO (MAIL + IG)
+========================================= */
+footer.tana-footer .contacto-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px 12px;
+    max-width: 100%;
+}
+
+footer.tana-footer .correo,
+footer.tana-footer .ig-estudio {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 3px 6px;
+    border: none;
+    border-radius: 6px;
+    background: transparent;
+    font-size: 11px;
+    line-height: 1.2;
+    text-decoration: none;
+    opacity: 0.88;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+footer.tana-footer .correo:hover,
+footer.tana-footer .ig-estudio:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+    text-decoration: underline;
+    background: transparent;
+}
+
+footer.tana-footer .contacto-icono,
+footer.tana-footer .ig-icono {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    footer.tana-footer .contacto-links {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    footer.tana-footer .correo,
+    footer.tana-footer .ig-estudio {
+        font-size: 10px;
+        padding: 2px 4px;
+    }
+
+    footer.tana-footer .contacto-icono,
+    footer.tana-footer .ig-icono {
+        width: 12px;
+        height: 12px;
+    }
+}/* =========================================
+   ICONO INSTAGRAM EN FOOTER
+========================================= */
+footer.tana-footer .ig-estudio .ig-icono {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    footer.tana-footer .ig-estudio .ig-icono {
+        width: 12px;
+        height: 12px;
+    }
+}
