@@ -3820,6 +3820,9 @@ body.intro-activa .cuervo-volando-tarjeta {
 /* Carrusel de hospedaje: las flechas ocupan siempre las columnas laterales. */
 #hospedaje {
     gap: 0;
+    --hospedaje-tarjeta-padding: clamp(12px, 3vw, 24px);
+    --hospedaje-foto-alto: clamp(170px, 32vw, 300px);
+    --hospedaje-foto-medio: clamp(85px, 16vw, 150px);
 }
 
 #hospedaje .etiqueta-seccion {
@@ -3874,7 +3877,7 @@ body.intro-activa .cuervo-volando-tarjeta {
     width: 100%;
     min-width: 0;
     margin: 0 auto;
-    padding: clamp(12px, 3vw, 24px);
+    padding: var(--hospedaje-tarjeta-padding);
     border: 1px solid rgba(165, 129, 69, .72);
     background: rgba(248, 241, 222, .82);
     box-shadow: 0 14px 32px rgba(68, 51, 32, .16), inset 0 0 0 5px rgba(199, 170, 115, .12);
@@ -3894,7 +3897,7 @@ body.intro-activa .cuervo-volando-tarjeta {
 
 #hospedaje .hospedaje-foto {
     width: 100%;
-    height: clamp(170px, 32vw, 300px);
+    height: var(--hospedaje-foto-alto);
     object-fit: cover;
     object-position: center;
 }
@@ -3956,6 +3959,8 @@ body.intro-activa .cuervo-volando-tarjeta {
     place-items: center;
     width: 100%;
     aspect-ratio: 1;
+    align-self: start;
+    margin-top: calc(var(--hospedaje-tarjeta-padding) + 7px + var(--hospedaje-foto-medio));
     padding: 0;
     border: 1px solid var(--libro-oro-claro);
     border-radius: 50%;
@@ -3963,11 +3968,12 @@ body.intro-activa .cuervo-volando-tarjeta {
     box-shadow: 0 5px 12px rgba(68, 51, 32, .18);
     color: var(--libro-marfil);
     font-size: clamp(14px, 4vw, 18px);
+    transform: translateY(-50%);
     transition: transform .2s ease, background .2s ease;
 }
 
 #hospedaje .hospedaje-flecha:hover {
-    transform: scale(1.06);
+    transform: translateY(-50%) scale(1.06);
     background: var(--bordo-oscuro);
 }
 
@@ -4002,6 +4008,11 @@ body.intro-activa .cuervo-volando-tarjeta {
     #hospedaje .hospedaje-carrusel {
         grid-template-columns: 30px minmax(0, 1fr) 30px;
         gap: 3px;
+    }
+
+    #hospedaje {
+        --hospedaje-foto-alto: 160px;
+        --hospedaje-foto-medio: 80px;
     }
 
     #hospedaje .hospedaje-foto {
