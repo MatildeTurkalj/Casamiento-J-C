@@ -3816,3 +3816,206 @@ body.intro-activa .cuervo-volando-tarjeta {
     pointer-events: auto !important;
     cursor: pointer;
 }
+
+/* Carrusel de hospedaje: las flechas ocupan siempre las columnas laterales. */
+#hospedaje {
+    gap: 0;
+}
+
+#hospedaje .etiqueta-seccion {
+    margin-bottom: 4px;
+}
+
+#hospedaje h2 {
+    margin-bottom: 0;
+}
+
+#hospedaje .separador-tarjeta-titulo {
+    height: 34px;
+    margin: 0 auto 8px;
+    object-fit: contain;
+}
+
+#hospedaje .introduccion-hospedaje {
+    max-width: 650px;
+    margin: 0 auto 24px;
+    color: var(--libro-bordo);
+    font-family: var(--fuente-elegante), Georgia, serif;
+    font-size: clamp(17px, 2.4vw, 21px);
+    line-height: 1.4;
+}
+
+#hospedaje .hospedaje-carrusel {
+    display: grid;
+    grid-template-columns: clamp(30px, 8vw, 48px) minmax(0, 1fr) clamp(30px, 8vw, 48px);
+    align-items: center;
+    gap: clamp(4px, 1.8vw, 16px);
+    width: min(100%, 760px);
+    margin: 8px auto 0;
+}
+
+#hospedaje .hospedaje-anterior {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#hospedaje .hospedaje-diapositivas {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+}
+
+#hospedaje .hospedaje-siguiente {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+#hospedaje .hospedaje-tarjeta {
+    width: 100%;
+    min-width: 0;
+    margin: 0 auto;
+    padding: clamp(12px, 3vw, 24px);
+    border: 1px solid rgba(165, 129, 69, .72);
+    background: rgba(248, 241, 222, .82);
+    box-shadow: 0 14px 32px rgba(68, 51, 32, .16), inset 0 0 0 5px rgba(199, 170, 115, .12);
+    animation: hospedaje-aparecer .35s ease both;
+}
+
+#hospedaje .hospedaje-tarjeta[hidden] {
+    display: none;
+}
+
+#hospedaje .hospedaje-foto-enlace {
+    display: block;
+    padding: 5px;
+    border: 1px solid var(--libro-oro);
+    background: rgba(255, 250, 240, .8);
+}
+
+#hospedaje .hospedaje-foto {
+    width: 100%;
+    height: clamp(170px, 32vw, 300px);
+    object-fit: cover;
+    object-position: center;
+}
+
+#hospedaje .hospedaje-tarjeta h3 {
+    margin: 12px 0 0;
+    color: var(--libro-bordo);
+    font-family: var(--fuente-elegante), Georgia, serif;
+    font-size: clamp(25px, 4vw, 36px);
+    font-style: italic;
+    line-height: 1.2;
+}
+
+#hospedaje .hospedaje-separador {
+    width: min(180px, 60%);
+    height: 20px;
+    margin: 0 auto 8px;
+    object-fit: contain;
+}
+
+#hospedaje .hospedaje-dato {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 9px;
+    margin: 4px auto;
+    color: #4f4030;
+    font-family: var(--fuente-elegante), Georgia, serif;
+    font-size: clamp(15px, 2.5vw, 19px);
+    line-height: 1.4;
+}
+
+#hospedaje .hospedaje-dato span {
+    flex: 0 0 auto;
+    color: var(--libro-bordo);
+}
+
+#hospedaje .hospedaje-dato a {
+    overflow-wrap: anywhere;
+    text-decoration-color: rgba(116, 47, 56, .35);
+    text-underline-offset: 3px;
+}
+
+#hospedaje .hospedaje-boton {
+    min-width: 0;
+    max-width: 100%;
+    margin-top: 14px;
+    border-radius: 3px;
+    background: var(--libro-bordo);
+    color: var(--libro-marfil);
+    font-family: var(--fuente-elegante), Georgia, serif;
+    font-size: 17px;
+    letter-spacing: .04em;
+    text-transform: none;
+}
+
+#hospedaje .hospedaje-flecha {
+    display: grid;
+    place-items: center;
+    width: 100%;
+    aspect-ratio: 1;
+    padding: 0;
+    border: 1px solid var(--libro-oro-claro);
+    border-radius: 50%;
+    background: var(--libro-bordo);
+    box-shadow: 0 5px 12px rgba(68, 51, 32, .18);
+    color: var(--libro-marfil);
+    font-size: clamp(14px, 4vw, 18px);
+    transition: transform .2s ease, background .2s ease;
+}
+
+#hospedaje .hospedaje-flecha:hover {
+    transform: scale(1.06);
+    background: var(--bordo-oscuro);
+}
+
+#hospedaje .hospedaje-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+#hospedaje .hospedaje-indicador {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    border: 1px solid var(--libro-bordo);
+    border-radius: 50%;
+    background: transparent;
+    transition: background .2s ease, transform .2s ease;
+}
+
+#hospedaje .hospedaje-indicador.activo {
+    transform: scale(1.08);
+    background: var(--libro-bordo);
+}
+
+@keyframes hospedaje-aparecer {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 360px) {
+    #hospedaje .hospedaje-carrusel {
+        grid-template-columns: 30px minmax(0, 1fr) 30px;
+        gap: 3px;
+    }
+
+    #hospedaje .hospedaje-foto {
+        height: 160px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #hospedaje .hospedaje-tarjeta {
+        animation: none;
+    }
+
+    #hospedaje .hospedaje-flecha,
+    #hospedaje .hospedaje-indicador {
+        transition: none;
+    }
+}
