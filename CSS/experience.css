@@ -1129,205 +1129,6 @@ body.intro-activa .cuervo-volando-tarjeta {
     font-size: 20px;
 }
 
-/* Hospedaje. */
-.hospedaje {
-    gap: 0;
-}
-
-.hospedaje .etiqueta-seccion {
-    margin-bottom: 4px;
-}
-
-.hospedaje h2 {
-    margin-bottom: 0 !important;
-}
-
-.hospedaje .separador-tarjeta-titulo {
-    margin: 0 auto 8px;
-}
-
-.introduccion-hospedaje {
-    max-width: 650px;
-    margin: 0 auto 24px;
-    color: var(--libro-bordo);
-    font-family: var(--fuente-elegante), Georgia, serif;
-    font-size: clamp(17px, 2.4vw, 21px);
-    line-height: 1.4;
-}
-
-.hospedaje-carrusel {
-    display: grid;
-    grid-template-columns: 52px minmax(0, 1fr) 52px;
-    align-items: center;
-    gap: clamp(8px, 2vw, 24px);
-    width: min(100%, 760px);
-}
-
-.hospedaje-diapositivas {
-    min-width: 0;
-}
-
-.hospedaje-tarjeta {
-    width: min(100%, 500px);
-    margin: 0 auto;
-    padding: clamp(16px, 3vw, 24px);
-    border: 1px solid rgba(165, 129, 69, .72);
-    background: rgba(248, 241, 222, .82);
-    box-shadow: 0 14px 32px rgba(68, 51, 32, .16), inset 0 0 0 5px rgba(199, 170, 115, .12);
-    animation: hospedaje-aparecer .35s ease both;
-}
-
-.hospedaje-tarjeta[hidden] {
-    display: none;
-}
-
-.hospedaje-foto-enlace {
-    display: block;
-    padding: 5px;
-    border: 1px solid var(--libro-oro);
-    background: rgba(255, 250, 240, .8);
-}
-
-.hospedaje-foto {
-    width: 100%;
-    height: clamp(190px, 32vw, 300px);
-    object-fit: cover;
-    object-position: center;
-}
-
-.hospedaje-tarjeta h3 {
-    margin: 12px 0 0 !important;
-    color: var(--libro-bordo) !important;
-    font-family: var(--fuente-elegante), Georgia, serif;
-    font-size: clamp(26px, 4vw, 36px) !important;
-    font-style: italic;
-    line-height: 1.2;
-}
-
-.hospedaje-separador {
-    width: min(180px, 60%);
-    height: 18px;
-    margin: 0 auto 8px;
-    object-fit: contain;
-}
-
-.hospedaje-dato {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    gap: 9px;
-    margin: 4px auto;
-    color: #4f4030;
-    font-family: var(--fuente-elegante), Georgia, serif;
-    font-size: clamp(16px, 2.5vw, 19px);
-    line-height: 1.4;
-}
-
-.hospedaje-dato span {
-    color: var(--libro-bordo);
-}
-
-.hospedaje-dato a {
-    text-decoration-color: rgba(116, 47, 56, .35);
-    text-underline-offset: 3px;
-}
-
-.hospedaje-boton {
-    min-width: min(230px, 100%);
-    margin-top: 14px;
-    border-radius: 3px;
-    background: var(--libro-bordo);
-    color: var(--libro-marfil);
-    font-family: var(--fuente-elegante), Georgia, serif;
-    font-size: 17px;
-    letter-spacing: .04em;
-    text-transform: none;
-}
-
-.hospedaje-boton:hover,
-.hospedaje-boton:focus-visible {
-    background: var(--libro-bordo);
-}
-
-.hospedaje-flecha {
-    display: grid;
-    place-items: center;
-    width: 46px;
-    height: 46px;
-    border: 1px solid var(--libro-oro-claro);
-    border-radius: 50%;
-    background: var(--libro-bordo);
-    box-shadow: 0 5px 12px rgba(68, 51, 32, .18);
-    color: var(--libro-marfil);
-    font-size: 18px;
-    transition: transform .2s ease, background .2s ease;
-}
-
-.hospedaje-flecha:hover {
-    transform: scale(1.06);
-    background: var(--libro-bordo);
-}
-
-.hospedaje-indicadores {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    margin-top: 18px;
-}
-
-.hospedaje-indicador {
-    width: 13px;
-    height: 13px;
-    padding: 0;
-    border: 1px solid var(--libro-bordo);
-    border-radius: 50%;
-    background: transparent;
-    transition: background .2s ease, transform .2s ease;
-}
-
-.hospedaje-indicador.activo {
-    transform: scale(1.08);
-    background: var(--libro-bordo);
-}
-
-@keyframes hospedaje-aparecer {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 520px) {
-    .hospedaje-carrusel {
-        grid-template-columns: 34px minmax(0, 1fr) 34px;
-        gap: 5px;
-    }
-
-    .hospedaje-flecha {
-        width: 34px;
-        height: 34px;
-        font-size: 14px;
-    }
-
-    .hospedaje-tarjeta {
-        padding: 12px;
-    }
-
-    .hospedaje-foto {
-        height: clamp(160px, 48vw, 230px);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .hospedaje-tarjeta {
-        animation: none;
-    }
-
-    .hospedaje-flecha,
-    .hospedaje-indicador {
-        transition: none;
-    }
-}
-
-
 .historia-retrato {
     position: relative;
     width: min(100%, 320px);
@@ -1763,65 +1564,6 @@ body.intro-activa .cuervo-volando-tarjeta {
 .ornamento-dresscode,
 .linea-final-dresscode {
     color: var(--libro-oro);
-}
-
-.regalos h2 {
-    max-width: 680px;
-    font-size: clamp(40px, 6vw, 62px) !important;
-}
-
-.opciones-regalo {
-    width: min(100%, 630px);
-    gap: 12px;
-}
-
-.opcion-regalo {
-    min-height: 78px;
-    border: 1px solid rgba(165, 129, 69, .42);
-    background: rgba(255, 252, 242, var(--transparencia-secciones, .62));
-    box-shadow: 0 8px 20px rgba(69, 50, 29, .08);
-    transition: transform .3s ease, box-shadow .3s ease;
-}
-
-.opcion-regalo:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 14px 25px rgba(69, 50, 29, .14);
-}
-
-.opcion-transferencia {
-    grid-template-columns: 72px minmax(0, 1fr) auto;
-    padding-right: 14px;
-}
-
-.icono-regalo {
-    color: var(--libro-oro);
-}
-
-.texto-transferencia {
-    color: var(--libro-verde-profundo);
-    font-size: 20px;
-}
-
-.datos-regalo {
-    color: #60503e;
-}
-
-#alias-regalo {
-    color: var(--libro-bordo);
-}
-
-.boton-copiar-alias {
-    min-height: 44px;
-    padding: 8px 12px;
-    font-family: var(--fuente-texto), sans-serif;
-    font-size: 11px;
-}
-
-.regalo-gracias {
-    margin: 20px auto 0 !important;
-    color: var(--libro-bordo) !important;
-    font-family: var(--fuente-titulo), cursive;
-    font-size: 29px;
 }
 
 .confirmacion {
@@ -2464,27 +2206,6 @@ body.intro-activa .cuervo-volando-tarjeta {
         height: 30px;
     }
 
-    .opcion-transferencia {
-        grid-template-columns: 48px minmax(0, 1fr);
-        gap: 0;
-        padding: 0 10px 12px 0;
-    }
-
-    .opcion-transferencia .icono-regalo {
-        grid-row: 1 / span 2;
-    }
-
-    .texto-transferencia {
-        padding: 10px 12px;
-        font-size: 17px;
-    }
-
-    .boton-copiar-alias {
-        grid-column: 2;
-        justify-self: start;
-        margin-left: 12px;
-    }
-
     .tana-footer {
         grid-template-columns: 1fr 1.5fr 1fr;
         gap: 10px;
@@ -2752,11 +2473,6 @@ body.intro-activa .cuervo-volando-tarjeta {
     border-radius: 12px;
 }
 
-.invitacion #regalos,
-.invitacion #confirmacion,
-.invitacion .opcion-transferencia {
-    background: rgba(245, 235, 216, var(--transparencia-secciones, .82)) !important;
-}
 
 .invitacion #regalos {
     position: relative;
@@ -2895,86 +2611,7 @@ body.intro-activa .cuervo-volando-tarjeta {
     opacity: .62;
 }
 
-.detalles-regalo {
-    display: grid;
-    justify-items: center;
-    gap: 20px;
-    min-width: 0;
-    text-align: center;
-}
 
-.mensaje-regalo {
-    max-width: 510px;
-    margin: 0;
-    color: #5a392d;
-    font-family: var(--fuente-elegante), Georgia, serif;
-    font-size: clamp(18px, 2.4vw, 24px);
-    font-style: italic;
-    line-height: 1.4;
-}
-
-.invitacion #regalos .opciones-regalo {
-    width: min(100%, 760px);
-    margin: 0;
-}
-
-.invitacion #regalos .opcion-transferencia {
-    position: relative;
-    display: block;
-    width: 100%;
-    min-height: 0;
-    aspect-ratio: 1765 / 891;
-    padding: 0;
-    overflow: hidden;
-    border: 0;
-    border-radius: 0;
-    background: transparent !important;
-    box-shadow: none;
-}
-
-.invitacion #regalos .opcion-transferencia:hover {
-    transform: none;
-    box-shadow: none;
-}
-
-.invitacion #regalos .imagen-transferencia {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.invitacion #regalos .boton-copiar-alias {
-    position: absolute;
-    z-index: 1;
-    top: 69%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 0;
-    min-height: clamp(14px, 4vw, 36px);
-    padding: clamp(1px, .4vw, 5px) clamp(6px, 1.2vw, 14px);
-    border: 1px solid rgba(211, 183, 127, .92);
-    border-radius: 4px;
-    background: var(--libro-verde-profundo);
-    box-shadow: 0 5px 12px rgba(24, 39, 31, .22);
-    color: var(--libro-marfil);
-    font-size: clamp(8px, 1.2vw, 13px);
-    white-space: nowrap;
-    transition: background .2s ease, box-shadow .2s ease;
-}
-
-.invitacion #regalos .boton-copiar-alias:hover {
-    background: var(--libro-bordo);
-}
-
-.invitacion #regalos .regalo-gracias {
-    max-width: 520px;
-    margin: 0;
-    color: #685642;
-    font-family: var(--fuente-elegante), Georgia, serif;
-    font-size: 17px;
-    font-style: italic;
-}
 
 #inicio {
     padding: clamp(24px, 5vh, 48px) 16px;
@@ -4034,3 +3671,148 @@ body.intro-activa .cuervo-volando-tarjeta {
     }
 }
 
+
+
+/* =====================================
+   INTRODUCCIÓN CON CORTINAS Y VIDEO
+===================================== */
+
+.intro-cinematica {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:
+        radial-gradient(ellipse at center, #3a3022, #100f0c 85%);
+}
+
+.cortina {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 51%;
+    z-index: 3;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            #35151d 0px,
+            #682b37 18px,
+            #421b26 38px,
+            #241016 58px
+        );
+    box-shadow: inset 0 0 35px rgba(0,0,0,.65);
+    transition: transform 1.5s cubic-bezier(.7,0,.2,1);
+}
+
+.cortina-izquierda {
+    left: 0;
+    border-right: 2px solid #b18a4e;
+}
+
+.cortina-derecha {
+    right: 0;
+    border-left: 2px solid #b18a4e;
+}
+
+.boton-iniciar-video {
+    position: relative;
+    z-index: 5;
+    border: 1px solid #c6a66a;
+    border-radius: 3px;
+    padding: 17px 24px;
+    color: #f5e5c5;
+    background: rgba(42, 24, 23, .9);
+    font-family: "Cormorant Garamond", serif;
+    font-size: clamp(16px, 3vw, 22px);
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+.boton-iniciar-video span {
+    color: #d9b875;
+    padding: 0 7px;
+}
+
+.video-apertura {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    opacity: 0;
+    transition: opacity .8s ease;
+    background: #100f0c;
+}
+
+.intro-cinematica.reproduciendo .video-apertura {
+    opacity: 1;
+}
+
+.intro-cinematica.reproduciendo .boton-iniciar-video {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.intro-cinematica.reproduciendo .cortina-izquierda {
+    transform: translateX(-105%);
+}
+
+.intro-cinematica.reproduciendo .cortina-derecha {
+    transform: translateX(105%);
+}
+
+.intro-cinematica.finalizada {
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .8s ease;
+}
+
+@media (max-width: 600px) {
+    .video-apertura {
+        object-fit: contain;
+    }
+
+    .boton-iniciar-video {
+        max-width: 85%;
+        padding: 15px 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cortina,
+    .video-apertura,
+    .intro-cinematica {
+        transition-duration: .01ms;
+    }
+}
+
+/* CORREGIR CLIC DE APERTURA */
+.intro-cinematica {
+    position: fixed;
+    isolation: isolate;
+}
+
+.cortina {
+    z-index: 2 !important;
+    pointer-events: none !important;
+}
+
+.video-apertura {
+    z-index: 1;
+    pointer-events: none;
+}
+
+.boton-iniciar-video {
+    position: absolute !important;
+    z-index: 10 !important;
+    pointer-events: auto !important;
+    cursor: pointer;
+}

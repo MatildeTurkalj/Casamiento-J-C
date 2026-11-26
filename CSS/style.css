@@ -111,8 +111,7 @@ img {
 .marco-informacion {
     position: relative;
     isolation: isolate;
-    border: 1px solid rgba(155, 122, 72, 0.55);
-    box-shadow: var(--sombra);
+
 }
 
 .contador-item.marco-informacion,
@@ -1314,181 +1313,65 @@ img {
 
 
 /* =========================================
-   11. REGALOS
+   9. REGALOS & TRANSFERENCIA (CORREGIDO PARA MÓVILES)
 ========================================= */
 
 .regalos {
-    width: min(100% - 32px, 900px);
-    min-height: 0;
-
+    width: min(100% - 24px, 900px);
     margin: 34px auto;
-    padding: clamp(52px, 8vw, 82px) clamp(20px, 6vw, 64px);
-
+    padding: clamp(35px, 6vw, 70px) clamp(16px, 4vw, 40px);
     overflow: hidden;
-
-    background:
-        radial-gradient(
-            ellipse at center,
-            rgba(255, 252, 245, var(--transparencia-secciones)),
-            rgba(238, 224, 201, var(--transparencia-secciones))
-        );
-
+    background: radial-gradient(
+        ellipse at center,
+        rgba(255, 252, 245, var(--transparencia-secciones)),
+        rgba(238, 224, 201, var(--transparencia-secciones))
+    );
     box-shadow: var(--sombra);
 }
 
-.regalos::before {
-    opacity: 0.78;
-
-    background-image:
-        url("../IMG/Rosa-Roja-Tupida.svg"),
-        url("../IMG/Rosa-Rosa-Desarmada.svg"),
-        url("../IMG/Rosa-Blanca-Tupida.svg"),
-        url("../IMG/Rosa-Roja-Desarmada.svg");
-
-    background-size:
-        112px auto,
-        90px auto,
-        106px auto,
-        102px auto;
-
-    background-position:
-        left 8px top 10px,
-        right 8px top 10px,
-        left 8px bottom 10px,
-        right 8px bottom 10px;
-}
-
-.regalos > * {
-    position: relative;
-    z-index: 1;
-}
-
-.regalos .etiqueta-seccion {
-    margin-bottom: 10px;
-    letter-spacing: 2.5px;
-}
-
-.regalos h2 {
-    max-width: 720px;
-    margin-bottom: 16px;
-
-    color: var(--bordo);
-    font-family: var(--fuente-titulo);
-    font-size: clamp(45px, 7vw, 76px);
-    line-height: 1.15;
-}
-
-.regalos > p:not(.etiqueta-seccion) {
-    max-width: 650px;
-    margin-bottom: 30px;
-
-    color: var(--texto);
-    font-family: var(--fuente-elegante);
-    font-size: clamp(18px, 2.8vw, 23px);
-    line-height: 1.45;
-}
-
-
-/* Opciones de regalo */
-
 .opciones-regalo {
-    display: grid;
-    gap: 14px;
-
-    width: min(100%, 580px);
-}
-
-.opcion-regalo {
-    display: grid;
-    grid-template-columns: 90px minmax(0, 1fr);
-
-    align-items: center;
-
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     width: 100%;
-    min-height: 88px;
-
-    overflow: hidden;
-
-    border-radius: 0;
-
-    background: rgba(255, 252, 245, var(--transparencia-secciones));
-
-    box-shadow: 0 5px 14px rgba(73, 53, 38, 0.07);
-
-    color: var(--texto);
-    font-family: var(--fuente-elegante);
-    font-size: clamp(19px, 3vw, 27px);
-
-    text-align: left;
-    text-decoration: none;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
-.icono-regalo {
-    position: relative;
-
-    display: grid;
-    place-items: center;
-
-    align-self: stretch;
-
-    border-right: 1px solid rgba(155, 122, 72, 0.2);
-
-    color: var(--dorado);
-    font-family: var(--fuente-elegante);
-    font-size: 36px;
-}
-
-.icono-banco::before {
-    content: "";
-
-    width: 32px;
-    height: 24px;
-
-    border-top: 9px solid currentColor;
-    border-bottom: 3px solid currentColor;
-
-    background:
-        linear-gradient(
-            to right,
-            currentColor 0 4px,
-            transparent 4px 10px,
-            currentColor 10px 14px,
-            transparent 14px 20px,
-            currentColor 20px 24px,
-            transparent 24px 28px,
-            currentColor 28px 32px
-        );
-
-    clip-path:
-        polygon(
-            0 28%,
-            50% 0,
-            100% 28%,
-            100% 100%,
-            0 100%
-        );
-}
-
+/* Opción de transferencia totalmente flexible */
 .opcion-transferencia {
-    grid-template-columns: 90px minmax(0, 1fr) auto;
-    padding-right: 16px;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 14px !important;
+    
+    width: 100% !important;
+    min-height: auto !important;
+    padding: 16px 20px !important;
+    
+    background: rgba(255, 252, 245, 0.95);
+    border: 1px solid rgba(155, 122, 72, 0.35);
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(73, 53, 38, 0.08);
 }
 
 .texto-transferencia {
-    display: grid;
-    gap: 4px;
-
-    padding: 12px 18px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    text-align: left !important;
+    padding: 0 !important;
 }
 
 .datos-regalo {
+    margin: 0 !important;
     color: var(--marron);
-
     font-family: var(--fuente-texto);
-    font-size: 12px;
-    line-height: 1.4;
-
-    overflow-wrap: anywhere;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    word-break: break-word !important;
 }
 
 #alias-regalo {
@@ -1496,37 +1379,53 @@ img {
     font-weight: 700;
 }
 
+/* Botón de copiar alias visible y táctil */
 .boton-copiar-alias {
-    padding: 9px 13px;
-
-    border: 1px solid var(--dorado-claro);
-    border-radius: 20px;
-
-    background: var(--verde);
-    color: var(--blanco);
-
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-
-    transition:
-        background 0.2s ease,
-        transform 0.2s ease;
+    position: static !important;
+    margin: 0 !important;
+    flex: 0 0 auto !important;
+    
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    
+    padding: 10px 18px !important;
+    border: 1px solid var(--dorado-claro) !important;
+    border-radius: 20px !important;
+    background: var(--verde) !important;
+    color: var(--blanco) !important;
+    
+    font-family: var(--fuente-texto) !important;
+    font-size: 13px !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+    cursor: pointer !important;
+    transition: all 0.25s ease !important;
 }
 
 .boton-copiar-alias:hover {
-    transform: translateY(-1px);
-    background: var(--bordo);
+    background: var(--bordo) !important;
+    transform: translateY(-2px);
 }
 
-.regalos > .regalo-gracias {
-    max-width: 520px;
-    margin: 28px auto 0;
+/* Adaptación para pantallas angostas (Celulares) */
+@media (max-width: 550px) {
+    .opcion-transferencia {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        text-align: center !important;
+        padding: 16px 14px !important;
+    }
 
-    color: var(--texto);
-    font-family: var(--fuente-elegante);
-    font-size: clamp(18px, 2.7vw, 23px);
-    line-height: 1.4;
+    .texto-transferencia {
+        text-align: center !important;
+    }
+
+    .boton-copiar-alias {
+        width: 100% !important;
+        margin-top: 8px !important;
+        padding: 12px !important;
+    }
 }
 
 
@@ -2679,10 +2578,6 @@ background:
 }
 
 /* Los marcos conservan el fondo de su sección y solo añaden vidrio */
-.marco-informacion {
-    backdrop-filter: blur(var(--desenfoque-secciones));
-    -webkit-backdrop-filter: blur(var(--desenfoque-secciones));
-}
 
 /* =========================================
    CEREMONIAS VICTORIANAS
@@ -3668,3 +3563,101 @@ background:
     }
 }
 
+
+/* VIDEO DE APERTURA A PANTALLA COMPLETA EN CELULARES */
+@media (max-width: 700px) {
+
+    #intro-cinematica {
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100vh;
+        height: 100dvh;
+        min-height: 100dvh;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #000;
+        z-index: 10000;
+    }
+
+    #video-apertura {
+        position: absolute;
+        inset: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        max-width: none;
+        object-fit: cover;
+        object-position: center;
+        border: 0;
+        border-radius: 0;
+        margin: 0;
+    }
+}
+
+#regalos .opcion-regalo.opcion-transferencia {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    padding: 18px 16px !important;
+    overflow: visible !important;
+    text-align: center !important;
+    background: rgba(255, 252, 245, 0.95) !important;
+    border: 1px solid rgba(155, 122, 72, 0.35) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 4px 12px rgba(73, 53, 38, 0.08) !important;
+}
+
+#regalos .opcion-transferencia .titulo-transferencia {
+    font-family: var(--fuente-elegante), serif !important;
+    font-size: 20px !important;
+    font-weight: 600 !important;
+    line-height: 1.2 !important;
+}
+
+#regalos .opcion-transferencia .datos-regalo {
+    display: block !important;
+    width: 100% !important;
+    margin: 0 !important;
+    text-align: center !important;
+    color: var(--marron, #60503e) !important;
+    font-family: var(--fuente-texto), sans-serif !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    overflow-wrap: anywhere !important;
+}
+
+#regalos .opcion-transferencia #alias-regalo {
+    color: var(--libro-bordo, var(--bordo)) !important;
+    font-weight: 700 !important;
+}
+
+#regalos .opcion-transferencia .boton-copiar-alias {
+    position: static !important;
+    inset: auto !important;
+    transform: none !important;
+    flex: 0 0 auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: auto !important;
+    min-width: 140px !important;
+    max-width: 100% !important;
+    min-height: 44px !important;
+    margin: 4px auto 0 !important;
+    padding: 10px 20px !important;
+    border: 1px solid var(--dorado-claro) !important;
+    border-radius: 20px !important;
+    background: var(--verde) !important;
+    color: var(--blanco) !important;
+    font-family: var(--fuente-texto), sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    white-space: nowrap !important;
+}
