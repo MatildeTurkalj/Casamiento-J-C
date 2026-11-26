@@ -1129,6 +1129,205 @@ body.intro-activa .cuervo-volando-tarjeta {
     font-size: 20px;
 }
 
+/* Hospedaje. */
+.hospedaje {
+    gap: 0;
+}
+
+.hospedaje .etiqueta-seccion {
+    margin-bottom: 4px;
+}
+
+.hospedaje h2 {
+    margin-bottom: 0 !important;
+}
+
+.hospedaje .separador-tarjeta-titulo {
+    margin: 0 auto 8px;
+}
+
+.introduccion-hospedaje {
+    max-width: 650px;
+    margin: 0 auto 24px;
+    color: var(--libro-bordo);
+    font-family: var(--fuente-elegante), Georgia, serif;
+    font-size: clamp(17px, 2.4vw, 21px);
+    line-height: 1.4;
+}
+
+.hospedaje-carrusel {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr) 52px;
+    align-items: center;
+    gap: clamp(8px, 2vw, 24px);
+    width: min(100%, 760px);
+}
+
+.hospedaje-diapositivas {
+    min-width: 0;
+}
+
+.hospedaje-tarjeta {
+    width: min(100%, 500px);
+    margin: 0 auto;
+    padding: clamp(16px, 3vw, 24px);
+    border: 1px solid rgba(165, 129, 69, .72);
+    background: rgba(248, 241, 222, .82);
+    box-shadow: 0 14px 32px rgba(68, 51, 32, .16), inset 0 0 0 5px rgba(199, 170, 115, .12);
+    animation: hospedaje-aparecer .35s ease both;
+}
+
+.hospedaje-tarjeta[hidden] {
+    display: none;
+}
+
+.hospedaje-foto-enlace {
+    display: block;
+    padding: 5px;
+    border: 1px solid var(--libro-oro);
+    background: rgba(255, 250, 240, .8);
+}
+
+.hospedaje-foto {
+    width: 100%;
+    height: clamp(190px, 32vw, 300px);
+    object-fit: cover;
+    object-position: center;
+}
+
+.hospedaje-tarjeta h3 {
+    margin: 12px 0 0 !important;
+    color: var(--libro-bordo) !important;
+    font-family: var(--fuente-elegante), Georgia, serif;
+    font-size: clamp(26px, 4vw, 36px) !important;
+    font-style: italic;
+    line-height: 1.2;
+}
+
+.hospedaje-separador {
+    width: min(180px, 60%);
+    height: 18px;
+    margin: 0 auto 8px;
+    object-fit: contain;
+}
+
+.hospedaje-dato {
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    gap: 9px;
+    margin: 4px auto;
+    color: #4f4030;
+    font-family: var(--fuente-elegante), Georgia, serif;
+    font-size: clamp(16px, 2.5vw, 19px);
+    line-height: 1.4;
+}
+
+.hospedaje-dato span {
+    color: var(--libro-bordo);
+}
+
+.hospedaje-dato a {
+    text-decoration-color: rgba(116, 47, 56, .35);
+    text-underline-offset: 3px;
+}
+
+.hospedaje-boton {
+    min-width: min(230px, 100%);
+    margin-top: 14px;
+    border-radius: 3px;
+    background: var(--libro-bordo);
+    color: var(--libro-marfil);
+    font-family: var(--fuente-elegante), Georgia, serif;
+    font-size: 17px;
+    letter-spacing: .04em;
+    text-transform: none;
+}
+
+.hospedaje-boton:hover,
+.hospedaje-boton:focus-visible {
+    background: var(--libro-bordo);
+}
+
+.hospedaje-flecha {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border: 1px solid var(--libro-oro-claro);
+    border-radius: 50%;
+    background: var(--libro-bordo);
+    box-shadow: 0 5px 12px rgba(68, 51, 32, .18);
+    color: var(--libro-marfil);
+    font-size: 18px;
+    transition: transform .2s ease, background .2s ease;
+}
+
+.hospedaje-flecha:hover {
+    transform: scale(1.06);
+    background: var(--libro-bordo);
+}
+
+.hospedaje-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.hospedaje-indicador {
+    width: 13px;
+    height: 13px;
+    padding: 0;
+    border: 1px solid var(--libro-bordo);
+    border-radius: 50%;
+    background: transparent;
+    transition: background .2s ease, transform .2s ease;
+}
+
+.hospedaje-indicador.activo {
+    transform: scale(1.08);
+    background: var(--libro-bordo);
+}
+
+@keyframes hospedaje-aparecer {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 520px) {
+    .hospedaje-carrusel {
+        grid-template-columns: 34px minmax(0, 1fr) 34px;
+        gap: 5px;
+    }
+
+    .hospedaje-flecha {
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    .hospedaje-tarjeta {
+        padding: 12px;
+    }
+
+    .hospedaje-foto {
+        height: clamp(160px, 48vw, 230px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hospedaje-tarjeta {
+        animation: none;
+    }
+
+    .hospedaje-flecha,
+    .hospedaje-indicador {
+        transition: none;
+    }
+}
+
+
 .historia-retrato {
     position: relative;
     width: min(100%, 320px);

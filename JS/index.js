@@ -506,6 +506,34 @@ document.querySelectorAll(".carrusel-arco").forEach(carrusel => {
     });
 
 });
+
+const hospedaje = document.querySelector("#hospedaje");
+
+if (hospedaje) {
+    const diapositivas = Array.from(hospedaje.querySelectorAll(".hospedaje-tarjeta"));
+    const indicadores = Array.from(hospedaje.querySelectorAll(".hospedaje-indicador"));
+    const anterior = hospedaje.querySelector(".hospedaje-anterior");
+    const siguiente = hospedaje.querySelector(".hospedaje-siguiente");
+    let indiceActual = 0;
+
+    function mostrarHotel(indice) {
+        indiceActual = (indice + diapositivas.length) % diapositivas.length;
+        diapositivas.forEach((diapositiva, posicion) => {
+            diapositiva.hidden = posicion !== indiceActual;
+        });
+        indicadores.forEach((indicador, posicion) => {
+            const activo = posicion === indiceActual;
+            indicador.classList.toggle("activo", activo);
+            indicador.setAttribute("aria-current", String(activo));
+        });
+    }
+
+    anterior.addEventListener("click", () => mostrarHotel(indiceActual - 1));
+    siguiente.addEventListener("click", () => mostrarHotel(indiceActual + 1));
+    indicadores.forEach((indicador, posicion) => {
+        indicador.addEventListener("click", () => mostrarHotel(posicion));
+    });
+}
 // ======================================
 // ESCRITURA DE LOS NOMBRES EN PORTADA
 // ======================================
