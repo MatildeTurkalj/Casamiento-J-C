@@ -2137,6 +2137,7 @@ background:
     }
 }
 
+
 /* =========================================
    RESPONSIVE
 ========================================= */
@@ -3662,22 +3663,172 @@ background:
     white-space: nowrap !important;
 }
 /* =========================================
-   COLOR UNIFICADO (DORADO / CREMA) PARA MAIL E IG
+   AJUSTE FOOTER EN CELULARES (ANA · CENTRO · NATA)
 ========================================= */
-footer.tana-footer .correo,
+@media (max-width: 768px) {
+    footer.tana-footer {
+        display: grid !important;
+        grid-template-columns: minmax(68px, 84px) minmax(0, 1fr) minmax(68px, 84px) !important;
+        grid-template-rows: auto !important;
+        align-items: center !important;
+        gap: 8px !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-height: 0 !important;
+        padding: 18px 10px 26px !important;
+        box-sizing: border-box !important;
+        overflow-x: clip !important;
+    }
+
+    footer.tana-footer .persona-ana {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        align-self: center !important;
+        justify-self: center !important;
+    }
+
+    footer.tana-footer .footer-centro {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        align-self: center !important;
+        justify-self: center !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        gap: 5px !important;
+    }
+
+    footer.tana-footer .persona-nata {
+        grid-column: 3 !important;
+        grid-row: 1 !important;
+        align-self: center !important;
+        justify-self: center !important;
+    }
+
+    footer.tana-footer .cabeza-marco {
+        width: 60px !important;
+        height: 60px !important;
+        min-width: 60px !important;
+        aspect-ratio: 1 / 1 !important;
+        overflow: hidden !important;
+        border-radius: 50% !important;
+    }
+
+    footer.tana-footer .cabeza-marco img,
+    footer.tana-footer .foto-persona,
+    footer.tana-footer .cabeza-foto {
+        display: block !important;
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        object-fit: cover !important;
+        object-position: center 25% !important;
+        border-radius: 50% !important;
+    }
+
+    footer.tana-footer .nombre-persona {
+        font-size: 11px !important;
+        line-height: 1.1 !important;
+    }
+
+    footer.tana-footer .marca {
+        font-size: clamp(20px, 5.5vw, 26px) !important;
+        line-height: 1.05 !important;
+    }
+
+    footer.tana-footer .correo {
+        font-size: 10px !important;
+        padding: 4px 8px !important;
+        max-width: 100% !important;
+        overflow-wrap: anywhere !important;
+    }
+
+    footer.tana-footer .copyright {
+        font-size: 9px !important;
+        line-height: 1.25 !important;
+    }
+
+    /* Ubicamos los @instagram debajo de cada foto sin romper las 3 columnas */
+    footer.tana-footer .ig-decorativo {
+        position: static !important;
+        grid-row: 2 !important;
+        align-self: start !important;
+        justify-self: center !important;
+        margin: 0 !important;
+        font-size: 8px !important;
+        letter-spacing: 0.2px !important;
+        opacity: 0.75 !important;
+        white-space: nowrap !important;
+    }
+
+    footer.tana-footer .ig-ana {
+        grid-column: 1 !important;
+    }
+
+    footer.tana-footer .ig-nata {
+        grid-column: 3 !important;
+    }
+}
+
+/* =========================================
+   CONTACTO COMPACTO (CORREO + IG ESTUDIO)
+========================================= */
+footer.tana-footer .contacto-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 6px 10px;
+    max-width: 100%;
+}
+
 footer.tana-footer .ig-estudio {
-    color: var(--gold, #d2bd92) !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    line-height: 1.2;
+    text-decoration: none;
+    opacity: 0.85;
+    padding: 2px 4px;
+    transition: opacity 0.2s ease;
 }
 
-footer.tana-footer .correo:visited,
-footer.tana-footer .ig-estudio:visited {
-    color: var(--gold, #d2bd92) !important;
+footer.tana-footer .ig-estudio:hover {
+    opacity: 1;
+    text-decoration: underline;
 }
 
-footer.tana-footer .contacto-icono,
-footer.tana-footer .ig-icono {
-    stroke: var(--gold, #d2bd92) !important;
-}/* =========================================
+@media (max-width: 768px) {
+    footer.tana-footer .contacto-links {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    footer.tana-footer .ig-estudio {
+        font-size: 10px;
+        padding: 1px 4px;
+    }
+}
+
+/* =========================================
+   ICONO INSTAGRAM EN FOOTER
+========================================= */
+footer.tana-footer .ig-estudio .ig-icono {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@media (max-width: 768px) {
+    footer.tana-footer .ig-estudio .ig-icono {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+/* =========================================
    ESTILO COMPACTO UNIFICADO (MAIL + IG)
 ========================================= */
 footer.tana-footer .contacto-links {
@@ -3740,20 +3891,22 @@ footer.tana-footer .ig-icono {
         width: 12px;
         height: 12px;
     }
-}/* =========================================
-   ICONO INSTAGRAM EN FOOTER
-========================================= */
-footer.tana-footer .ig-estudio .ig-icono {
-    width: 14px;
-    height: 14px;
-    flex-shrink: 0;
-    display: inline-block;
-    vertical-align: middle;
 }
 
-@media (max-width: 768px) {
-    footer.tana-footer .ig-estudio .ig-icono {
-        width: 12px;
-        height: 12px;
-    }
+/* =========================================
+   COLOR UNIFICADO (DORADO / CREMA) PARA MAIL E IG
+========================================= */
+footer.tana-footer .correo,
+footer.tana-footer .ig-estudio {
+    color: var(--gold, #d2bd92) !important;
+}
+
+footer.tana-footer .correo:visited,
+footer.tana-footer .ig-estudio:visited {
+    color: var(--gold, #d2bd92) !important;
+}
+
+footer.tana-footer .contacto-icono,
+footer.tana-footer .ig-icono {
+    stroke: var(--gold, #d2bd92) !important;
 }
